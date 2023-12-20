@@ -1,0 +1,38 @@
+/* success_styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://img2.akspic.ru/previews/5/6/0/4/6/164065/164065-svet-art-synthwave-ot_utroby_do_gibeli-proizvedenie_iskusstva-550x310.jpg'); /* Путь к фотографии на заднем фоне */
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    text-align: center;
+    color: white;
+}
+
+h2, p {
+    font-size: 1.3em; /* Размер текста  */
+    margin-bottom: 20px;
+    color: white;
+}
+
+button {
+    font-size: 1.5em; /* Размер текста кнопки */
+    padding: 10px 20px;
+    background-color: #dc1568;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #833d9f;
+}

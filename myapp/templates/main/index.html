@@ -1,0 +1,178 @@
+{% load static %}
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Freshcars</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div id="logo" onclick="slowScroll('#top')">
+            <span>Чистое авто</span>
+        </div>
+        <div id="about">
+            <a href="#main" title="Возможности" onclick="slowScroll('#main')">Возможности</a>
+            <a href="#overview" onclick="slowScroll('#overiew')" title="Услуги">Услуги</a>
+             <a href="#contacts" onclick="slowScroll('#contacts')" title="Записаться">Записаться</a>
+             <a href="#faq" onclick="slowScroll('#faq')" title="Ответы на вопросы">FAQ</a>
+
+
+        </div>
+    </header>
+
+    <div id="top">
+        <h1>Чисто и Быстро</h1>
+        <h3>Профессиональная Автомойка</h3>
+    </div>
+
+    <div id="main">
+        <div class="intro">
+            <h2>Наша работа понравятся вам!</h2>
+            <span>Большой выбор качественных услуг!</span>
+        </div>
+        <div class="text">
+            <span>
+
+                Профессиональная мойка и полировка предотвращают коррозию, продлевая срок службы.<br>
+
+                Чистые стекла и фары обеспечивают лучшую видимость и безопасность вождения.<br>
+
+                Чистота салона создает уютное пространство для водителя и пассажиров.<br>
+
+                Экономим время клиента, предоставляя профессиональные услуги по уходу за автомобилем.<br>
+
+            </span>
+        </div>
+    </div>
+
+    <div id="overview">
+        <h2>Услуги</h2>
+        <h4>С нами все проще</h4>
+
+    <div class="img">
+        <img src="https://okeydrive.ru/wp-content/uploads/2019/03/Depositphotos_2381703_m-2015.jpg" alt="Image 1" style="height: 300px;">
+        <span>Мойка с любовью и вниманием</span>
+    </div>
+
+
+    <div class="img">
+        <img src="https://symbol-service.ru/upload/iblock/da2/da2d4162164ce0583bb1a11a815a106d.jpg" alt="Image 2" style="height: 300px;">
+        <span>Детейлинговая чистка и идеальная полировка.</span>
+    </div>
+
+
+         <div class="img">
+        <img src="https://www.moiostrov.com/wp-content/uploads/ferrari-salon-moiostrov33-web-46.jpg" alt="Image 4" style="height: 300px;">
+        <span>Профессиональная химчистка интерьера.</span>
+    </div>
+
+    <div class="img">
+        <img src="https://vatikam.s3.amazonaws.com/uploads/portfolio_module/image/83309/portfolio_8916ade1da.jpg" alt="Image 3" style="height: 300px;">
+        <span>Эксклюзивные услуги для полного комфорта.</span>
+    </div>
+    </div>
+
+    <div id="contacts">
+    <center><h5>Запись на сервис</h5></center>
+
+    <form id="form_input" method="post" action="{% url 'service_view' %}">
+
+        {% csrf_token %}
+
+        <label for="name">Имя<span>*</span></label><br>
+        <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+
+         <label for="phone">Ваш телефон <span>*</span></label><br>
+        <input type="tel" placeholder="Введите номер телефона" name="phone" id="phone"><br>
+
+        <label for="date">На какой день?<span>*</span></label><br>
+        <input type="date" placeholder="Введите желаемую дату" name="date" id="date"><br>
+
+               <label for="selected_service">Выбор услуги<span>*</span></label><br>
+        <input type="text" placeholder="Введите услугу" name="selected_service" id="selected_service"><br>
+
+        <label for="message">Комментарий<span>*</span></label><br>
+        <textarea placeholder="Ваш комментарий" name="message" id="message"></textarea><br>
+
+        <div><button class="btn btn-success" type="submit">Записаться</button></div>
+    </form>
+    </div>
+
+    <div id="faq">
+        <div>
+            <span class="title">Информация</span><br>
+
+            <span class="heading">Время работы</span>
+            <p>
+                Мы открыты ежедневно с 8 утра до 7 вечера. Вы также можете предварительно записаться онлайн.
+                Гибкий график для вашего удобства. Добро пожаловать!</p>
+
+            <span class="heading">Наш адрес</span>
+
+            <p>Мы находимся по адресу: ул. Примерная, 123. Легко добраться общественным транспортом.
+                Парковка для клиентов предоставляется.  Требуется помощь? Звоните по номеру +7 (555) 123-4567.</p>
+
+        </div>
+
+         <div>
+            <span class="title">Акции</span><br>
+
+            <span class="heading">Акция для новых клиентов</span>
+
+            <p>
+                Приветствуем новых клиентов! Освежите свой автомобиль с нашей акцией: первая мойка по выгодной цене.
+                Доверьтесь профессионалам и наслаждайтесь чистотой вашего транспорта!</p>
+
+            <span class="heading">Для постоянных клиентов</span>
+
+            <p>Мы ценим наших постоянных клиентов! Получайте эксклюзивные скидки на все услуги автомойки и детейлинга.
+                Верность награждается - ваш автомобиль всегда в блеске по выгодным ценам!</p>
+             <
+        </div>
+
+         <div>
+            <span class="title">Услуги и цены</span><br>
+
+            <span class="heading">Какие есть услуги?</span>
+
+            <p>Комплексная мойка, детейлинг, химчистка салона и дополнительные услуги — всё, что вам нужно для
+                автомобильного ухода. Воспользуйтесь нашими акциями и выгодами.</p>
+
+            <span class="heading">Цены</span>
+
+            <p>Наши цены адаптированы для различных потребностей. Комплексная мойка от 1000р., детейлинг от 5000р.
+                . Приятные скидки для постоянных клиентов. Узнайте больше, связавшись с нами.</p>
+
+        </div>
+
+
+    </div>
+
+     <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Чистое авто</p>
+        </div>
+    </footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    function slowScroll(id) {
+        $('html, `body').animate({
+            scrollTop: $(id).offset().top
+        }, 500);
+    }
+
+    $(document).on("scroll", function () {
+    if($(window).scrollTop() ===0)
+      $("header").removeClass("fixed");
+    else
+        $("header").attr("class", "fixed");
+    });
+</script>
+</body>
+</html>

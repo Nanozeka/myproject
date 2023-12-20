@@ -1,0 +1,29 @@
+<!-- success_page.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/success_page.css' %}">
+    <title>Успешное сохранение</title>
+</head>
+<body>
+
+    <div style="text-align: center; margin-top: 50px;">
+        <h2>Ваш запрос успешно отправлен!</h2>
+        <p>Спасибо за выбор нашей автомойки. Мы свяжемся с вами в ближайшее время для подтверждения деталей.</p>
+        <p>До скорой встречи!</p>
+
+        <button onclick="goBack()">Назад</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>
